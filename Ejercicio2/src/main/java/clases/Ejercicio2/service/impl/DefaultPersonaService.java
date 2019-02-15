@@ -14,7 +14,7 @@ import clases.Ejercicio2.service.PersonaService;
 public class DefaultPersonaService implements PersonaService{
 
     @Override
-    public String edad(int edad) {
+    public String comparacionEdad(int edad) {
         if(edad>=50){
             return "hola Señor de edad adulta";
         }

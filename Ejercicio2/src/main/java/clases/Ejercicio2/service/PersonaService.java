@@ -10,5 +10,5 @@ import org.springframework.stereotype.Service;
 @Service
 public interface PersonaService {
     
-    String edad(int edad);
+    String comparacionEdad(int edad);
 }
