@@ -8,4 +8,6 @@ package clases.Ejercicio2.service;
 public interface PersonaService {
     
     String comparacionEdad(int edad);
+    String comparacionEntreEdades(int edad1,int edad2);
+    
 }
