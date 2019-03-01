@@ -9,5 +9,7 @@ public interface CarroService {
     
     public CarroDTO editarCarro(CarroDTO carro);
     
-    public CarroDTO eliminarCarro(CarroDTO carro); 
+    public CarroDTO eliminarCarro(CarroDTO carro);
+    
+    public String existeElCarro(CarroDTO carro);
 }
