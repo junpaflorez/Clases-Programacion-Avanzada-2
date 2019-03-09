@@ -16,21 +16,64 @@
 
     <v-content>
       <HelloWorld/>
+      <v-dialog
+      v-model="dialog"
+      width="500"
+    >
+      <template v-slot:activator="{ on }">
+        <v-btn
+          color="red lighten-2"
+          dark
+          v-on="on"
+        >
+          calendario
+        </v-btn>
+      </template>
+
+      <v-card>
+        <v-card-title
+          class="headline grey lighten-2"
+          primary-title
+        >
+          Calendario
+        </v-card-title>
+
+        <v-card-text>
+          <Calendar></Calendar>
+
+          </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            flat
+            @click="dialog = false"
+          >
+            salir
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
     </v-content>
   </v-app>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
+import Calendar from './components/Calendar'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    Calendar
   },
   data () {
     return {
-      //
+      dialog: false
     }
   }
 }

@@ -3,28 +3,15 @@
       <v-container
         fluid
         grid-list-lg
+        
       >
-        <v-layout row wrap>
-          <v-flex xs12>
-            <v-card color="blue-grey darken-2" class="white--text">
-              <v-card-title primary-title>
-                <div>
-                  <div class="headline">Unlimited music now</div>
-                  <span>Listen to your favorite artists and albums whenever and wherever, online and offline.</span>
-                </div>
-              </v-card-title>
-              <v-card-actions>
-                <v-btn flat dark>Listen now</v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-
-          <v-flex xs12>
+        <v-layout  row wrap v-for="pelicula in peliculas" :key="pelicula.titulo" >
+          <v-flex  xs12   >
             <v-card color="cyan darken-2" class="white--text">
               <v-layout>
                 <v-flex xs5>
                   <v-img
-                    src="https://cdn.vuetifyjs.com/images/cards/foster.jpg"
+                    :src="pelicula.src"
                     height="125px"
                     contain
                   ></v-img>
@@ -32,51 +19,18 @@
                 <v-flex xs7>
                   <v-card-title primary-title>
                     <div>
-                      <div class="headline">Supermodel</div>
-                      <div>Foster the People</div>
-                      <div>(2014)</div>
+                      <div class="headline">{{pelicula.titulo}}</div>
+                      <div>{{pelicula.sinopsis}}</div>
+                      <div>{{pelicula.fecha}}</div>
                     </div>
                   </v-card-title>
                 </v-flex>
               </v-layout>
               <v-divider light></v-divider>
               <v-card-actions class="pa-3">
-                Rate this album
+                Califica esta pelicula
                 <v-spacer></v-spacer>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-                <v-icon>star_border</v-icon>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-
-          <v-flex xs12>
-            <v-card color="purple" class="white--text">
-              <v-layout row>
-                <v-flex xs7>
-                  <v-card-title primary-title>
-                    <div>
-                      <div class="headline">Halycon Days</div>
-                      <div>Ellie Goulding</div>
-                      <div>(2013)</div>
-                    </div>
-                  </v-card-title>
-                </v-flex>
-                <v-flex xs5>
-                  <v-img
-                    src="https://cdn.vuetifyjs.com/images/cards/halcyon.png"
-                    height="125px"
-                    contain
-                  ></v-img>
-                </v-flex>
-              </v-layout>
-              <v-divider light></v-divider>
-              <v-card-actions class="pa-3">
-                Rate this album
-                <v-spacer></v-spacer>
-                <v-icon>star_border</v-icon>
+                <v-icon>videocam</v-icon>
                 <v-icon>star_border</v-icon>
                 <v-icon>star_border</v-icon>
                 <v-icon>star_border</v-icon>
@@ -93,18 +47,24 @@
   export default {
     data () {
       return {
-        items: [
+        peliculas:[
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'
+            titulo:'aquaman',
+            src:'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/main_element/public/media/image/2018/11/posters-aquaman.jpg?itok=VvqepQmZ',
+            sinopsis:'historia de un sireno y su amigo chico percebe',
+            fecha:'2019'
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
+            titulo:'Battle Angel Alita',
+            src:'https://akamai-platform.foxfilm.com/s3/production/201901/154c0160cc03d637a75f30cb0f0765ff3b88ef0f.jpg',
+            sinopsis:'una ojona que pelea contra maquinas',
+            fecha:'2019'
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
-          },
-          {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
+            titulo:'el ultimo salto del cojo',
+            src:'https://www.tiendadebastones.com/WebRoot/StoreES3/Shops/ec9169/5930/485C/7749/E83A/4853/52DF/D07D/91A2/G2147gN_ml.jpg',
+            sinopsis:'un cojo salto, sera que se cayo?',
+            fecha:'2020'
           }
         ]
       }
