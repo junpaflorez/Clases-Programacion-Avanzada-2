@@ -1,89 +1,92 @@
 <template>
-  <v-container>
-    <v-layout
-      text-xs-center
-      wrap
-    >
-      <v-flex xs12>
-        <v-img
-          src="https://media.tenor.com/images/6cd19812ee85b4226c79f281cb10f26a/tenor.gif"
-          class="my-3"
-          contain
-          height="200"
-        ></v-img>
-      </v-flex>
+  <v-card>
+      <v-container
+        fluid
+        grid-list-lg
+      >
+        <v-layout row wrap>
+          <v-flex xs12>
+            <v-card color="blue-grey darken-2" class="white--text">
+              <v-card-title primary-title>
+                <div>
+                  <div class="headline">Unlimited music now</div>
+                  <span>Listen to your favorite artists and albums whenever and wherever, online and offline.</span>
+                </div>
+              </v-card-title>
+              <v-card-actions>
+                <v-btn flat dark>Listen now</v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-flex>
 
-      <v-flex mb-4>
-        <h1 class="display-2 font-weight-bold mb-3">
-          Bienvenido a Programacion Avanzada II
-        </h1>
-        
-      </v-flex>
-
-    </v-layout>
-    <v-container >
-        <v-layout row>
-        <v-flex xs12 sm6 >
-          <v-card dark>
-            <v-container grid-list-sm fluid>
-              <v-layout row wrap>
-                <v-flex
-                  v-for="n in 9"
-                  :key="n"
-                  xs4
-                  d-flex
-                >
-                  <v-card flat tile class="d-flex">
-                    <v-img
-                      :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
-                      :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
-                      aspect-ratio="1"
-                      class="grey lighten-2"
-                    >
-                      <template v-slot:placeholder>
-                        <v-layout
-                          fill-height
-                          align-center
-                          justify-center
-                          ma-0
-                        >
-                          <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                        </v-layout>
-                      </template>
-                    </v-img>
-                  </v-card>
+          <v-flex xs12>
+            <v-card color="cyan darken-2" class="white--text">
+              <v-layout>
+                <v-flex xs5>
+                  <v-img
+                    src="https://cdn.vuetifyjs.com/images/cards/foster.jpg"
+                    height="125px"
+                    contain
+                  ></v-img>
+                </v-flex>
+                <v-flex xs7>
+                  <v-card-title primary-title>
+                    <div>
+                      <div class="headline">Supermodel</div>
+                      <div>Foster the People</div>
+                      <div>(2014)</div>
+                    </div>
+                  </v-card-title>
                 </v-flex>
               </v-layout>
-            </v-container>
-          </v-card>
-          <v-card dark>
-                  <p>
-        Java es un lenguaje de programación creado por Sun Microsystems, (empresa que
-        posteriormente fue comprada por Oracle) para poder funcionar en distintos tipos de
-        procesadores. Su sintaxis es muy parecida a la de C o C++, e incorpora como propias
-        algunas características que en otros lenguajes son extensiones: gestión de hilos, ejecución
-        remota, etc.
-        El código Java, una vez compilado, puede llevarse sin modificación alguna sobre
-        cualquier máquina, y ejecutarlo. Esto se debe a que el código se ejecuta sobre una
-        máquina hipotética o virtual, la Java Virtual Machine, que se encarga de interpretar el
-        código (ficheros compilados .class) y convertirlo a código particular de la CPU que se
-        esté utilizando (siempre que se soporte dicha máquina virtual).
-      </p>
-          </v-card>
+              <v-divider light></v-divider>
+              <v-card-actions class="pa-3">
+                Rate this album
+                <v-spacer></v-spacer>
+                <v-icon>star_border</v-icon>
+                <v-icon>star_border</v-icon>
+                <v-icon>star_border</v-icon>
+                <v-icon>star_border</v-icon>
+                <v-icon>star_border</v-icon>
+              </v-card-actions>
+            </v-card>
+          </v-flex>
 
-        </v-flex>
-
-      </v-layout>
-
-    </v-container>
-    <v-carousel>
-    <v-carousel-item 
-      v-for="(item,i) in items"
-      :key="i"
-      :src="item.src"
-    ></v-carousel-item>
-  </v-carousel>
-  </v-container>
+          <v-flex xs12>
+            <v-card color="purple" class="white--text">
+              <v-layout row>
+                <v-flex xs7>
+                  <v-card-title primary-title>
+                    <div>
+                      <div class="headline">Halycon Days</div>
+                      <div>Ellie Goulding</div>
+                      <div>(2013)</div>
+                    </div>
+                  </v-card-title>
+                </v-flex>
+                <v-flex xs5>
+                  <v-img
+                    src="https://cdn.vuetifyjs.com/images/cards/halcyon.png"
+                    height="125px"
+                    contain
+                  ></v-img>
+                </v-flex>
+              </v-layout>
+              <v-divider light></v-divider>
+              <v-card-actions class="pa-3">
+                Rate this album
+                <v-spacer></v-spacer>
+                <v-icon>star_border</v-icon>
+                <v-icon>star_border</v-icon>
+                <v-icon>star_border</v-icon>
+                <v-icon>star_border</v-icon>
+                <v-icon>star_border</v-icon>
+              </v-card-actions>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </v-card>
 </template>
 
 <script>

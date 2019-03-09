@@ -1,18 +1,17 @@
 <template>
-  <v-app>
-    <v-toolbar app>
+  <v-app >
+    <v-toolbar  app extended>
       <v-toolbar-title class="headline text-uppercase">
-        <span>Nombre:</span>
-        <span class="font-weight-light">Juan Pablo Florez Caicedo</span>
+        <span>Peliculas</span>
+        <span class="font-weight-light" style="color:red;"> Mapacheflix FREE 2.0</span>
+        
       </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">soy un boton</span>
-      </v-btn>
+        <v-img
+          src="https://media.tenor.com/images/6cd19812ee85b4226c79f281cb10f26a/tenor.gif"
+          height="150"
+          contain
+          class="my-3"
+        ></v-img>
     </v-toolbar>
 
     <v-content>
@@ -36,3 +35,8 @@ export default {
   }
 }
 </script>
+<style>
+.application{
+  color:red;
+}
+</style>
