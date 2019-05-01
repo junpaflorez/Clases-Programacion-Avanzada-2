@@ -4,6 +4,8 @@ import PA2.ejemplo1.DTO.PersonaDTO;
 import PA2.ejemplo1.Services.PersonaService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,4 +39,13 @@ public class PersonaController {
         return ResponseEntity.notFound().build();
     }
     
+    @PostMapping("/registrarPersona")
+    public ResponseEntity<?> registrarPersona(@RequestBody PersonaDTO personaDTO){
+        boolean respuesta = false;
+        respuesta = personaService.registrarPersona(personaDTO);
+        if(respuesta){
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.badRequest().build();
+    }
 }

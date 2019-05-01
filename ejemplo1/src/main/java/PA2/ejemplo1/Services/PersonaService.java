@@ -21,6 +21,11 @@ public class PersonaService {
         return null;
     }
     
+    public boolean registrarPersona(PersonaDTO personaDTO){
+        Persona persona = new Persona();
+        
+    }
+            
     /*
         funcion necesaria, para pasar del objeto Persona a PersonaDTO,
         recordar el ejemplo de los gemelos.
@@ -33,6 +38,17 @@ public class PersonaService {
         personaDTO.setCorreo(persona.getCorreo());
         personaDTO.setCiudad_nacimiento(persona.getCiudad_nacimiento());
         return personaDTO;
+    }
+    
+    
+    public Persona PersonaDTOToPersona(PersonaDTO personaDTO){
+        Persona persona = new Persona();
+        persona.setNombre(personaDTO.getNombre());
+        persona.setApellido(personaDTO.getApellido());
+        persona.setEdad(personaDTO.getEdad());
+        persona.setCorreo(personaDTO.getCorreo());
+        persona.setCiudad_nacimiento(personaDTO.getCiudad_nacimiento());
+        return persona;
     }
     
     
