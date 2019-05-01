@@ -23,7 +23,11 @@ public class PersonaService {
     
     public boolean registrarPersona(PersonaDTO personaDTO){
         Persona persona = new Persona();
-        
+        persona = PersonaDTOToPersona(personaDTO);
+        if(persona.getNombre().matches(personaDTO.getNombre())){
+            return true;
+        }
+        return false;
     }
             
     /*
@@ -38,8 +42,7 @@ public class PersonaService {
         personaDTO.setCorreo(persona.getCorreo());
         personaDTO.setCiudad_nacimiento(persona.getCiudad_nacimiento());
         return personaDTO;
-    }
-    
+    } 
     
     public Persona PersonaDTOToPersona(PersonaDTO personaDTO){
         Persona persona = new Persona();
