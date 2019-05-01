@@ -21,6 +21,7 @@ public class PersonaService {
         return null;
     }
     
+    //Funcion que me permite "guardar" una persona en base de datos (cabe resaltar que falta la conexion a base de datos)
     public boolean registrarPersona(PersonaDTO personaDTO){
         Persona persona = new Persona();
         persona = PersonaDTOToPersona(personaDTO);
@@ -44,6 +45,10 @@ public class PersonaService {
         return personaDTO;
     } 
     
+    /*
+        funcion necesaria, para pasar del objeto PersonaDTO a Persona,
+        recordar el ejemplo de los gemelos.
+    */
     public Persona PersonaDTOToPersona(PersonaDTO personaDTO){
         Persona persona = new Persona();
         persona.setNombre(personaDTO.getNombre());

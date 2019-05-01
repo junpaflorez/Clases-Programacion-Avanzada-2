@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/persona")//necesario para indicar cual es la URL, del controlador
 public class PersonaController {
     private PersonaService personaService;
-
+    //constructor super necesario para poder ejecutar los servicios y demas metodos de clases diferentes a los metodos presentados en esta
     public PersonaController(PersonaService personaService) {
         this.personaService = personaService;
     }
@@ -25,6 +25,8 @@ public class PersonaController {
     Update = actualizar
     Delete = eliminar
     */
+    
+    
     /*
         GetMapping: URL, que indica cual es el metodo a utilizar
         RequestParam: recibe para recibir valores por URL
@@ -39,6 +41,11 @@ public class PersonaController {
         return ResponseEntity.notFound().build();
     }
     
+    /*
+        Funcion encargada de registrar Personas en la base de datos
+        PostMapping: URL, que indica cual es el metodo a utilizar y recibir por POST
+        @RequestBody: permite recibir un objeto tipo JSON en el Body de la peticion HTTP
+    */
     @PostMapping("/registrarPersona")
     public ResponseEntity<?> registrarPersona(@RequestBody PersonaDTO personaDTO){
         boolean respuesta = false;
