@@ -1,0 +1,10 @@
+package PAII.ConnectMongoDB.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("api/persona")
+public class PersonaController {
+    
+}
