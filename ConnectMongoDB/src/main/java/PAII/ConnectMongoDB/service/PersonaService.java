@@ -25,5 +25,7 @@ public class PersonaService {
         return null;
     }
     
-    
+        public void borrarPersona(String cedula){
+            personaRepository.deleteById(cedula);
+        }
 }

@@ -22,7 +22,7 @@ public class PersonaController {
         return ResponseEntity.ok(personaService.guardarPersona(persona));
     }
     
-    @GetMapping
+    @GetMapping("/buscarPersona")
     public ResponseEntity<?> buscarPersona(@RequestParam("cedula") String cedula){
         return ResponseEntity.ok(personaService.consultarPersona(cedula));
     }
