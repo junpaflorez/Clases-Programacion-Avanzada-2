@@ -15,7 +15,7 @@ public class PersonaController {
     @Autowired
     private PersonaService personaService;
     
-    @PostMapping
+    @PostMapping("/guardarPersona")
     public ResponseEntity<?> guardarPersona(@RequestBody Persona persona){
         return ResponseEntity.ok(personaService.guardarPersona(persona));
     }
